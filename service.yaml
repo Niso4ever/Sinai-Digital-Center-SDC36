@@ -1,0 +1,87 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    run.googleapis.com/client-name: gcloud
+    run.googleapis.com/client-version: 548.0.0
+    run.googleapis.com/ingress: all
+    run.googleapis.com/ingress-status: all
+    run.googleapis.com/operation-id: 7c0afe5d-8ea1-4639-8426-9b57e5592fcc
+    run.googleapis.com/urls: '["https://sdc36-api-406792367928.us-central1.run.app","https://sdc36-api-q3acjiheyq-uc.a.run.app"]'
+    serving.knative.dev/creator: nisoforever2025@gmail.com
+    serving.knative.dev/lastModifier: nisoforever2025@gmail.com
+  creationTimestamp: '2025-11-27T20:02:34.360407Z'
+  generation: 12
+  labels:
+    cloud.googleapis.com/location: us-central1
+  name: sdc36-api
+  namespace: '406792367928'
+  resourceVersion: AAZEtXd8Yso
+  selfLink: /apis/serving.knative.dev/v1/namespaces/406792367928/services/sdc36-api
+  uid: b9549e29-9e51-4d6a-95ec-a6d0f48e76d1
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/maxScale: '3'
+        run.googleapis.com/client-name: gcloud
+        run.googleapis.com/client-version: 548.0.0
+        run.googleapis.com/startup-cpu-boost: 'true'
+      labels:
+        client.knative.dev/nonce: zejnvaplsy
+        run.googleapis.com/startupProbeType: Default
+    spec:
+      containerConcurrency: 80
+      containers:
+      - env:
+        - name: GOOGLE_CLOUD_PROJECT
+          value: sdc36-mena-ai
+        - name: GOOGLE_CLOUD_REGION
+          value: us-central1
+        - name: GCS_BUCKET_NAME
+          value: sdc36-mena-ai-sdc36-data
+        - name: VERTEX_INDEX_ENDPOINT_ID
+          value: '3280434722911551488'
+        - name: VERTEX_DEPLOYED_INDEX_ID
+          value: sdc36_deployment_1764263294174
+
+        image: gcr.io/sdc36-mena-ai/sdc36-api
+        ports:
+        - containerPort: 8080
+          name: http1
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 512Mi
+        startupProbe:
+          failureThreshold: 1
+          periodSeconds: 240
+          tcpSocket:
+            port: 8080
+          timeoutSeconds: 240
+      serviceAccountName: 406792367928-compute@developer.gserviceaccount.com
+      timeoutSeconds: 300
+  traffic:
+  - latestRevision: true
+    percent: 100
+status:
+  address:
+    url: https://sdc36-api-q3acjiheyq-uc.a.run.app
+  conditions:
+  - lastTransitionTime: '2025-11-29T06:00:44.673738Z'
+    status: 'True'
+    type: Ready
+  - lastTransitionTime: '2025-11-29T05:59:10.268156Z'
+    status: 'True'
+    type: ConfigurationsReady
+  - lastTransitionTime: '2025-11-29T06:00:44.592384Z'
+    status: 'True'
+    type: RoutesReady
+  latestCreatedRevisionName: sdc36-api-00012-bf6
+  latestReadyRevisionName: sdc36-api-00012-bf6
+  observedGeneration: 12
+  traffic:
+  - latestRevision: true
+    percent: 100
+    revisionName: sdc36-api-00012-bf6
+  url: https://sdc36-api-q3acjiheyq-uc.a.run.app

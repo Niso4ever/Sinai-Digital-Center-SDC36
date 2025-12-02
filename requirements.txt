@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+google-cloud-aiplatform
+google-cloud-storage
+openai
+streamlit
+python-dotenv
+pydantic
+requests
+google-auth
+pypdf
+sqlalchemy
+psycopg2-binary

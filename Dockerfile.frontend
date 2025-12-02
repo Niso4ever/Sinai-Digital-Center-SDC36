@@ -1,0 +1,17 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Expose port for Cloud Run
+ENV PORT=8080
+EXPOSE 8080
+
+# Command to run the application
+# Streamlit runs on 8501 by default, but Cloud Run expects the container to listen on $PORT (default 8080)
+# We configure Streamlit to listen on $PORT
+CMD streamlit run frontend/streamlit_app.py --server.port ${PORT} --server.address 0.0.0.0
