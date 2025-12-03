@@ -1,4 +1,11 @@
 # SDC-36 Agentic AI App
+<p align="center">
+  <img src="assets/logo2.png" alt="Project Logo" width="200">
+</p>
+
+<h1 align="center">Sinai Digital Center — SDC36</h1>
+<p align="center">Agentic AI • RAG • Google Cloud • Vertex AI</p>
+
 
 This is the SDC-36 Agentic AI Application, designed to generate strategic content using Google Vertex AI RAG and OpenAI GPT-5.1.
 Please use this link to Run the Project :  https://sdc36-frontend-q3acjiheyq-uc.a.run.app
