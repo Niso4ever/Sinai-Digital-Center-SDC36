@@ -1,7 +1,7 @@
 # SDC-36 Agentic AI App
 
 This is the SDC-36 Agentic AI Application, designed to generate strategic content using Google Vertex AI RAG and OpenAI GPT-5.1.
- https://sdc36-frontend-q3acjiheyq-uc.a.run.app
+Please use this link to Run the Project :  https://sdc36-frontend-q3acjiheyq-uc.a.run.app
 
 ## Architecture
 
