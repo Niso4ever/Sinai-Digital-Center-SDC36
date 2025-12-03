@@ -1,6 +1,6 @@
 # SDC-36 Agentic AI App
 <p align="center">
-  <img src="assets/logo2.png" alt="Project Logo" width="200">
+  <img src="assets/Logo2.png" alt="Project Logo" width="200">
 </p>
 
 <h1 align="center">Sinai Digital Center — SDC36</h1>
