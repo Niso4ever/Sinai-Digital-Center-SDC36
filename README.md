@@ -15,15 +15,27 @@ Please use this link to Run the Project :  https://sdc36-frontend-q3acjiheyq-uc.
 
 ## Architecture
 
-PDFs -> GCS Bucket -> Vertex Embeddings -> Vertex Matching Engine
-                               |
-                         RAG Retriever
-                               |
-          User -> Antigravity UI -> FastAPI (Cloud Run)
-                               |
-                       GPT-5.1 Agentic Controller
-                               |
-                     Tools -> Final Output -> UI
+```
+Data ingestion
++------+   +-------------+   +-------------------+   +-----------------------+
+| PDFs |-->| GCS Bucket  |-->| Vertex Embeddings |-->| Vertex Matching Engine|
++------+   +-------------+   +-------------------+   +-----------------------+
+
+User request / generation
++------+   +----------------+   +---------------------+   +----------------------------+
+| User |-->| Antigravity UI |-->| FastAPI (Cloud Run) |-->| GPT-5.1 Agentic Controller |
++------+   +----------------+   +---------------------+   +----------------------------+
+                                   |                            |
+                                   v                            v
+                         +----------------+          +--------------------+
+                         | RAG Retriever  |<---------|        Tools       |
+                         +----------------+          +--------------------+
+                                   |
+                                   v
+                        +--------------------+
+                        | Final Output / UI  |
+                        +--------------------+
+```
 
 ## Setup
 
